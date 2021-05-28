@@ -1,0 +1,12 @@
+.content{
+  grid-area: c;
+  background-color: royalblue;
+}
+.ocean img {
+  width: 900px;
+  height: 400px;
+}
+.ava img {
+  width: 200px;
+  height: 150px;
+}
