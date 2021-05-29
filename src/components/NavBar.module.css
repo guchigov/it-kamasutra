@@ -1,10 +1,18 @@
 .nav {
   grid-area: n;
   background-color: steelblue;
+
+
 }
 .item {
  color: white;
 }
 .item.active{
     color: gold;
+}
+.navMargin {
+    margin:50px 10px ;
+}
+.item.settings{
+    margin: 40px 0;
 }
