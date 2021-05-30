@@ -6,13 +6,17 @@ const MyPosts = () => {
     return (
         <div> My posts
             <div>
+
                 <textarea></textarea>
-                <div><button>Add post</button>
-                <button>Remove</button>
+                <div>
+
+                    <button>Add post</button>
+                    <button>Remove</button>
                 </div>
             </div>
-            <Post/>
-            <Post/>
+
+            <Post message='How are you?' like='like 3'/>
+            <Post message='I learn React' like='like 10'/>
             <Post/>
             <Post/>
         </div>
