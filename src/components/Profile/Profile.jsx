@@ -2,12 +2,12 @@ import React from "react";
 import classes from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 import Disc from "./Discr/Disc";
-import Wallpper from "./Wallpaper/Wallpper";
+import Wallpaper from "./Wallpaper/Wallpper";
 
 const Profile = () => {
     return (
         <div className={classes.content}>
-            <Wallpper/>
+            <Wallpaper/>
             <Disc/>
             <MyPosts/>
         </div>
