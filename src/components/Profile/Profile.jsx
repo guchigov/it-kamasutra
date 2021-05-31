@@ -7,7 +7,7 @@ import Post from "./MyPosts/Post/Post";
 
 const Profile = () => {
     return (
-        <div className={classes.content}>
+        <div>
             <Wallpaper/>
             <Disc/>
             <MyPosts/>
