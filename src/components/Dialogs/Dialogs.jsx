@@ -1,30 +1,44 @@
 import React from 'react';
 import classes from './Dialogs.module.css'
+import {BrowserRouter, NavLink} from "react-router-dom";
 
 
 const Dialogs = (props) => {
     return (
+        <BrowserRouter>
         <div className={classes.dialogs}>
 
 
             <div className={classes.usersDialogs}>
                 <div className={classes.user + ' ' + classes.activeUser}>
-                    Dimich
+                    <NavLink to='/dialogs/1'>
+                        Dimich
+                    </NavLink>
                 </div>
                 <div className={classes.user}>
-                    Andy
+                    <NavLink to='/dialogs/2'>
+                        Andy
+                    </NavLink>
                 </div>
                 <div className={classes.user}>
-                    Victor
+                    <NavLink to='/dialogs/3'>
+                        Victor
+                    </NavLink>
                 </div>
                 <div className={classes.user}>
-                    Sveta
+                    <NavLink to='/dialogs/4'>
+                        Sveta
+                    </NavLink>
                 </div>
                 <div className={classes.user}>
-                    Maria
+                    <NavLink to='/dialogs/5'>
+                        Maria
+                    </NavLink>
                 </div>
                 <div className={classes.user}>
-                    Hannah
+                    <NavLink to='/dialogs/6'>
+                        Hannah
+                    </NavLink>
                 </div>
 
 
@@ -46,6 +60,7 @@ const Dialogs = (props) => {
 
 
         </div>
+        </BrowserRouter>
 
     );
 
