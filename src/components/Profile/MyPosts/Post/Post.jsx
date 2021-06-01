@@ -5,6 +5,7 @@ const Post = (props) => {
     return (
 
         <div className={classes.item}>
+            {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
             <img src='https://topmsg.ru/wp-content/uploads/anonymous.jpg' alt='avatar picture'/>
             {props.message}
             <div>
