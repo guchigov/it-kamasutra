@@ -7,7 +7,7 @@
 
 
     grid-template-rows: 50px 5fr;
-    grid-template-columns: 100px 9fr;
+    grid-template-columns: auto 9fr;
     grid-gap: 4px;
 
 }

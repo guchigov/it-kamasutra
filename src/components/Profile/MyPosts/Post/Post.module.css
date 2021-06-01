@@ -1,5 +1,6 @@
 .item {
-  color: darkblue;
+  color: black;
+  grid-area: postitem;
 }
 .item img {
   width: 50px;

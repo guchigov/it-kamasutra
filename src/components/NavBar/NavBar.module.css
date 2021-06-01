@@ -1,18 +1,19 @@
 .nav {
   grid-area: n;
   background-color: steelblue;
-
+  padding: 20px;
 
 }
-.item {
+
+
+.item a {
  color: white;
+    text-decoration: none;
 }
-.item.active{
+.item a.activeLink {
     color: gold;
 }
-.navMargin {
-    margin:50px 10px ;
-}
+
 .item.settings{
     margin: 40px 0;
 }
