@@ -6,8 +6,9 @@ const MyPosts = () => {
     return (
         <div className={classes.mypost}>
             <div>
-                <div>My posts</div>
-                <textarea></textarea>
+                <div><h3>My posts</h3></div>
+                <div><textarea></textarea></div>
+
                 <div>
 
                     <button>Add post</button>
