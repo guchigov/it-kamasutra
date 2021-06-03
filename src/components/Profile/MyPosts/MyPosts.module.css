@@ -1,0 +1,10 @@
+.mypost {
+    padding: 10px;
+}
+.divPost {
+    background-color: steelblue;
+    /*border: 1px solid black;*/
+    margin-top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

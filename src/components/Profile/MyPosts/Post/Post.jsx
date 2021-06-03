@@ -8,8 +8,8 @@ const Post = (props) => {
             {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
             <img src='https://topmsg.ru/wp-content/uploads/anonymous.jpg' alt='avatar picture'/>
             {props.message}
-            <div>
-                <span>like</span> {props.likescount}
+            <div className={classes.like}>
+                <span>like: </span> {props.likescount}
             </div>
         </div>
 

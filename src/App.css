@@ -9,7 +9,6 @@
     grid-template-rows: 50px 5fr;
     grid-template-columns: auto 9fr;
     grid-gap: 4px;
-
 }
 .app-wrapper-content {
     grid-area: c;
