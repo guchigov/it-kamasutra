@@ -17,16 +17,19 @@
   grid-area: avatar;
   border-radius: 3px;
   border: 2px solid white;
+  margin-top:  5px;
+  margin-left: 5px;
 }
 
 .about {
   grid-area: about;
   background-color: steelblue;
-  padding-left: 20px;
 }
 
 .divDesc {
-  background-color: skyblue;
+  /*background-color: skyblue;*/
   margin: 15px 25px 5px 1px;
   border: 2px solid white;
+  color: white;
+  padding: 10px;
 }
