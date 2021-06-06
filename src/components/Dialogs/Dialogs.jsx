@@ -25,6 +25,7 @@ const Mesage = (props) => {
 
 
 const Dialogs = (props) => {
+
     let UserDialogsData = [
         {id: 1, name: 'Dimich'},
         {id: 2, name: 'Maria'},
@@ -41,37 +42,19 @@ const Dialogs = (props) => {
         {id: 4, message: "Nice 2 mu"},
         {id: 5, message: "Yo"},
         {id: 6, message: "Should Lern React Fast"}
-
     ]
+    let UserDialogServer = UserDialogsData.map(dialog => <UserDialog name={dialog.name} id={dialog.id}/>);
+    let MessageServer = MessagesData.map(textMessage => <Mesage message={textMessage.message}/>);
+
     return (
-
         <div className={classes.dialogs}>
-
             <div className={classes.usersDialogs}>
-                <UserDialog name={UserDialogsData[0].name} id={UserDialogsData[0].id}/>
-                <UserDialog name={UserDialogsData[1].name} id={UserDialogsData[1].id}/>
-                <UserDialog name={UserDialogsData[2].name} id={UserDialogsData[2].id}/>
-                <UserDialog name={UserDialogsData[3].name} id={UserDialogsData[3].id}/>
-                <UserDialog name={UserDialogsData[4].name} id={UserDialogsData[4].id}/>
-                <UserDialog name={UserDialogsData[5].name} id={UserDialogsData[5].id}/>
-
-
+                {UserDialogServer}
             </div>
-
             <div className={classes.messages}>
-                <Mesage message={MessagesData[0].message}/>
-                <Mesage message={MessagesData[1].message}/>
-                <Mesage message={MessagesData[2].message}/>
-                <Mesage message={MessagesData[3].message}/>
-                <Mesage message={MessagesData[4].message}/>
-                <Mesage message={MessagesData[5].message}/>
+                {MessageServer}
             </div>
-
-
         </div>
-
-
     );
-
 }
 export default Dialogs;
