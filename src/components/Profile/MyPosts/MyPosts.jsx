@@ -7,8 +7,14 @@ const MyPosts = () => {
         {id: 1, message: 'How are you ?', likescount: 3},
         {id: 2, message: 'We will rock U', likescount: 10},
         {id: 3, message: 'Check my Git', likescount: 0},
+        {id: 3, message: 'Check my Git', likescount: 0},
+        {id: 3, message: 'Check my Git', likescount: 0},
+        {id: 3, message: 'Check my Git', likescount: 0},
+        {id: 3, message: 'Check my Git', likescount: 0},
         {id: 4, message: 'React is perfect', likescount: 100}
     ]
+    let PostsDataServer =
+        PostsData.map(postMessage => <Post message={postMessage.message} likescount={postMessage.likescount}/>);
     return (
         <div className={classes.mypost}>
             <div>
@@ -22,10 +28,7 @@ const MyPosts = () => {
                 </div>
             </div>
             <div className={classes.divPost}>
-                <Post message={PostsData[0].message} likescount={PostsData[0].likescount}/>
-                <Post message={PostsData[1].message} likescount={PostsData[1].likescount}/>
-                <Post message={PostsData[2].message} likescount={PostsData[2].likescount}/>
-                <Post message={PostsData[3].message} likescount={PostsData[3].likescount}/>
+                {PostsDataServer}
             </div>
         </div>
 
