@@ -6,13 +6,12 @@ import Wallpaper from "./Wallpaper/Wallpaper";
 
 const Profile = (props) => {
 
-let PostsData = props.PostsDataProps;
     return (
         <div>
             <Wallpaper/>
             <div className={classes.afterWall}>
                 <Description/>
-                <MyPosts PostsDataProps={PostsData}/>
+                <MyPosts postsData={props.postsData}/>
             </div>
 
 

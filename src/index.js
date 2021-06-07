@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-let PostsData = [
+let PostsDataServer = [
     {id: 1, message: 'How are you ?', likescount: 3},
     {id: 2, message: 'We will rock U', likescount: 10},
     {id: 3, message: 'Check my Git', likescount: 0},
@@ -14,7 +14,7 @@ let PostsData = [
     {id: 4, message: 'React is perfect', likescount: 100}
 ]
 
-let UserDialogsData = [
+let dialogsDataServer = [
     {id: 1, name: 'Dimich'},
     {id: 2, name: 'Maria'},
     {id: 3, name: 'Hannah'},
@@ -23,7 +23,7 @@ let UserDialogsData = [
     {id: 6, name: 'Victor'}
 
 ]
-let MessagesData = [
+let messagesDataServer = [
     {id: 1, message: "Hello"},
     {id: 2, message: "Hello World!"},
     {id: 3, message: "All love triangle"},
@@ -33,7 +33,7 @@ let MessagesData = [
 ]
 ReactDOM.render(
   <React.StrictMode>
-    <App PostsDataProps={PostsData} UserDialogsDataProps={UserDialogsData} MessagesDataProps={MessagesData}/>
+    <App postsData={PostsDataServer} dialogData={dialogsDataServer} messagesData={messagesDataServer}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

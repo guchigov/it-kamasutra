@@ -4,8 +4,8 @@ import Post from "./Post/Post";
 
 const MyPosts = (props) => {
 
-    let PostsDataServer =
-        props.PostsDataProps.map(postMessage => <Post message={postMessage.message} likescount={postMessage.likescount}/>);
+    let mapPostsData =
+        props.postsData.map(postMessage => <Post message={postMessage.message} likescount={postMessage.likescount}/>);
     return (
         <div className={classes.mypost}>
             <div>
@@ -19,7 +19,7 @@ const MyPosts = (props) => {
                 </div>
             </div>
             <div className={classes.divPost}>
-                {PostsDataServer}
+                {mapPostsData}
             </div>
         </div>
 
