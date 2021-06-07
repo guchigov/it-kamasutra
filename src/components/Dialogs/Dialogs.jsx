@@ -4,24 +4,8 @@ import Mesage from "./Mesage/Mesage";
 import UserDialog from "./UserDialog/UserDialog";
 
 const Dialogs = (props) => {
-
-    let UserDialogsData = [
-        {id: 1, name: 'Dimich'},
-        {id: 2, name: 'Maria'},
-        {id: 3, name: 'Hannah'},
-        {id: 4, name: 'Rob'},
-        {id: 5, name: 'David'},
-        {id: 6, name: 'Victor'}
-
-    ]
-    let MessagesData = [
-        {id: 1, message: "Hello"},
-        {id: 2, message: "Hello World!"},
-        {id: 3, message: "All love triangle"},
-        {id: 4, message: "Nice 2 mu"},
-        {id: 5, message: "Yo"},
-        {id: 6, message: "Should Lern React Fast"}
-    ]
+    let UserDialogsData = props.DialogsDataProps;
+    let MessagesData = props.MessagesDataProps;
     let UserDialogServer = UserDialogsData.map(dialog => <UserDialog name={dialog.name} id={dialog.id}/>);
     let MessageServer = MessagesData.map(textMessage => <Mesage message={textMessage.message}/>);
 

@@ -4,13 +4,15 @@ import MyPosts from "./MyPosts/MyPosts";
 import Description from "./Description/Description";
 import Wallpaper from "./Wallpaper/Wallpaper";
 
-const Profile = () => {
+const Profile = (props) => {
+
+let PostsData = props.PostsDataProps;
     return (
         <div>
             <Wallpaper/>
             <div className={classes.afterWall}>
                 <Description/>
-                <MyPosts/>
+                <MyPosts PostsDataProps={PostsData}/>
             </div>
 
 
