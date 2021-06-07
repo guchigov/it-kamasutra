@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './Disc.module.css';
 
-const Disc = () => {
+const Description = () => {
     return (
         <div className={classes.avaAndDesc}>
             <div className={classes.ava}>
@@ -25,4 +25,4 @@ const Disc = () => {
 
     );
 }
-export default Disc;
+export default Description;
