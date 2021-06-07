@@ -6,8 +6,8 @@ const UserDialog = (props) => {
     let way = "/dialogs/" + props.id;
 
     return (
-        <div className={classes.user + ' ' + classes.activeUser}>
-            <NavLink to={way}>{props.name}</NavLink>
+        <div className={classes.user}>
+            <NavLink activeClassName={classes.activeLink} to={way}>{props.name} </NavLink>
         </div>
     );
 }

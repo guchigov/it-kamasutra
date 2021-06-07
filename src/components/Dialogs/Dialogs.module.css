@@ -6,7 +6,11 @@
 .usersDialogs {
     padding: 10px;
 }
-.usersDialogs .activeUser{
+.user a {
+    color: orange;
+    text-decoration: none;
+}
+.user a.activeLink{
     color: blue;
 }
 
