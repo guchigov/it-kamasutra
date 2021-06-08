@@ -1,19 +1,31 @@
 .nav {
-  grid-area: n;
-  background-color: steelblue;
-  padding: 50px 30px 5px;
+    grid-area: n;
+    background-color: steelblue;
+    padding: 50px 30px 5px;
 
 }
-
+.item {
+    font-size: x-large;
+}
 
 .item a {
- color: white;
+    color: white;
     text-decoration: none;
 }
+
 .item a.activeLink {
     color: gold;
 }
 
-.item.settings{
+.item.settings {
     margin: 40px 0;
+}
+
+.bestFriends {
+    font-size: small;
+}
+
+.item.friends {
+    color: white;
+    font-size: xx-large;
 }

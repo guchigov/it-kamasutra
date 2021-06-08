@@ -1,8 +1,13 @@
 import React from "react";
 import classes from './NavBar.module.css';
 import {NavLink} from "react-router-dom";
-const NavBar = () => {
+import UserDialog from "../Dialogs/UserDialog/UserDialog";
+
+const NavBar = (props) => {
+    let mapFriend = props.state.map(friend =>
+        <UserDialog name={friend.name} id={friend.id} avatar={friend.avatar}/>);
     return (
+
 
         <nav className={classes.nav}>
             <div className={classes.navMargin}>
@@ -22,6 +27,17 @@ const NavBar = () => {
                                                                                 activeClassName={classes.activeLink}>
                     Settings</NavLink>
                 </div>
+
+                <div className={`${classes.item} ${classes.friends}`}>
+                    FRIENDS
+
+                </div>
+
+                <div className={classes.bestFriends}>
+                    <span>{mapFriend}</span>
+                </div>
+
+
             </div>
 
         </nav>
