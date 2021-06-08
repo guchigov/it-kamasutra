@@ -5,8 +5,11 @@ import UserDialog from "./UserDialog/UserDialog";
 
 const Dialogs = (props) => {
 
-    let mapDialog = props.state.dialogsState.map(dialog => <UserDialog name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
-    let mapMessages = props.state.messageState.map(textMessage => <Mesage message={textMessage.message}/>);
+    let mapDialog = props.state.dialogsState.map(dialog =>
+        <UserDialog name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
+
+    let mapMessages = props.state.messageState.map(textMessage =>
+        <Mesage message={textMessage.message}/>);
 
     return (
         <div className={classes.dialogs}>
@@ -16,6 +19,7 @@ const Dialogs = (props) => {
             <div className={classes.messages}>
                 {mapMessages}
             </div>
+
         </div>
     );
 }

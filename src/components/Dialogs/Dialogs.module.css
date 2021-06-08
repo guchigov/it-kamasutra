@@ -15,22 +15,45 @@
 .user a.activeLink {
     color: blue;
 }
-
-.messages {
-    padding: 10px;
+.user {
+    margin: 2px;
+    padding: 1px 1px 30px;
+    grid-area: oneUser;
+}
+.oneMessage {
+    margin-top: 25px;
+    padding: 1px 1px 30px;
 }
 
 .user img {
     width: 50px;
+    height: 50px;
     border-radius: 20px;
     margin-top: 50px;
-}
-
-.avatar {
-
 }
 
 .name {
     margin-left: 60px;
     margin-top: -50px;
 }
+
+.messages {
+    margin-top: 50px;
+
+}
+
+.messages .other {
+    padding: 15px 1px 15px 10px;
+    background-color: skyblue;
+    width: 300px;
+    border-radius: 20px;
+}
+.me {
+    background-color: orange;
+    padding: 15px 1px 15px 10px;
+    margin-left: 300px;
+    margin-top: -50px;
+    border-radius: 20px;
+    width: 300px;
+}
+
