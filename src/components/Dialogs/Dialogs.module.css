@@ -6,19 +6,31 @@
 .usersDialogs {
     padding: 10px;
 }
+
 .user a {
     color: orange;
     text-decoration: none;
 }
-.user a.activeLink{
+
+.user a.activeLink {
     color: blue;
 }
 
 .messages {
     padding: 10px;
 }
-.user img{
+
+.user img {
     width: 50px;
     border-radius: 20px;
     margin-top: 50px;
+}
+
+.avatar {
+
+}
+
+.name {
+    margin-left: 60px;
+    margin-top: -50px;
 }

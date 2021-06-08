@@ -5,7 +5,7 @@ import UserDialog from "./UserDialog/UserDialog";
 
 const Dialogs = (props) => {
 
-    let mapDialog = props.state.dialogsState.map(dialog => <UserDialog name={dialog.name} id={dialog.id}/>);
+    let mapDialog = props.state.dialogsState.map(dialog => <UserDialog name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
     let mapMessages = props.state.messageState.map(textMessage => <Mesage message={textMessage.message}/>);
 
     return (

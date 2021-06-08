@@ -14,12 +14,12 @@ let state = {
     dialogsPage: {
 
         dialogsState: [
-            {id: 1, name: 'Dimich'},
-            {id: 2, name: 'Maria'},
-            {id: 3, name: 'Hannah'},
-            {id: 4, name: 'Rob'},
-            {id: 5, name: 'David'},
-            {id: 6, name: 'Victor'}
+            {id: 1, name: 'Dimich', avatar: 'https://i.ytimg.com/vi/iJ4UGNGzJzY/hqdefault.jpg?sqp=-oaymwEXCOADEI4CSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBnmgSojZdsUkxXfQLs7wK5dW0irw'},
+            {id: 2, name: 'Maria', avatar: 'https://www.seas.harvard.edu/sites/default/files/styles/embedded_image_large/public/images/news/zlatkova_maria_web_square.jpg?itok=Z2IqHSei'},
+            {id: 3, name: 'Hannah', avatar: 'https://cs50.harvard.edu/college/2019/fall/staff/media/Emma-Humphrey.png'},
+            {id: 4, name: 'Rob', avatar: 'https://cra.org/wp-content/uploads/2018/05/Robert-Bowden.jpg'},
+            {id: 5, name: 'David', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/David_J._Malan.png/220px-David_J._Malan.png'},
+            {id: 6, name: 'Victor', avatar: 'https://i.ytimg.com/an/TW0FUhT0m-Bqg2trTbSs0g/featured_channel.jpg?v=5fc22bf3'}
 
         ],
         messageState: [
