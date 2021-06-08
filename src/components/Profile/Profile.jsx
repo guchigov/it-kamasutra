@@ -11,7 +11,7 @@ const Profile = (props) => {
             <Wallpaper/>
             <div className={classes.afterWall}>
                 <Description/>
-                <MyPosts postsData={props.postsData}/>
+                <MyPosts postsData={props.state.postsState}/>
             </div>
 
 

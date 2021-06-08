@@ -5,8 +5,8 @@ import UserDialog from "./UserDialog/UserDialog";
 
 const Dialogs = (props) => {
 
-    let mapDialog = props.dialogData.map(dialog => <UserDialog name={dialog.name} id={dialog.id}/>);
-    let mapMessages = props.messagesData.map(textMessage => <Mesage message={textMessage.message}/>);
+    let mapDialog = props.state.dialogsState.map(dialog => <UserDialog name={dialog.name} id={dialog.id}/>);
+    let mapMessages = props.state.messageState.map(textMessage => <Mesage message={textMessage.message}/>);
 
     return (
         <div className={classes.dialogs}>
