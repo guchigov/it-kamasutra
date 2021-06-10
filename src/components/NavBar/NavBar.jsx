@@ -33,13 +33,14 @@ const NavBar = (props) => {
 
                 </div>
 
-                <div className={classes.bestFriends}>
-                    <span>{mapFriend}</span>
-                </div>
+
 
 
             </div>
-
+            {mapFriend}
+            <div className={classes.bestFriends}>
+                {/*<span> {mapFriend}</span>*/}
+            </div>
         </nav>
     );
 }

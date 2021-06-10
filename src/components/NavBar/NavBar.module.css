@@ -1,7 +1,7 @@
 .nav {
     grid-area: n;
     background-color: steelblue;
-    padding: 50px 30px 5px;
+    padding: 80px 50px 10px 50px;
 
 }
 .item {
@@ -23,9 +23,14 @@
 
 .bestFriends {
     font-size: small;
+    background-color: blue;
+    width: 200px;
 }
 
 .item.friends {
     color: white;
     font-size: large;
+}
+.navMargin {
+    padding: 10px 20px 30px 20px;
 }
