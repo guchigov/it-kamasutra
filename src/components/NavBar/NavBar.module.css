@@ -5,7 +5,7 @@
 
 }
 .item {
-    font-size: x-large;
+    font-size: large;
 }
 
 .item a {
@@ -27,5 +27,5 @@
 
 .item.friends {
     color: white;
-    font-size: xx-large;
+    font-size: large;
 }
