@@ -26,6 +26,10 @@ let state = {
             {id: 4, message: "Nice 2 mu"},
             {id: 5, message: "Yo"},
             {id: 6, message: "Hello"},
+        ],
+        answerState: [
+            {id: 1, message: "Hello, Dimich"},
+            {id: 2, message: "I can write it on JS!"}
         ]
     },
     navBar: [
@@ -48,10 +52,10 @@ export let addPost = (postMessage) => {
 
 export let sendMessage = (textMessage) => {
     let newMessage = {
-        id: 7,
+        id: 3,
         message: textMessage,
     }
-    state.dialogsPage.messageState.push(newMessage);
+    state.dialogsPage.answerState.push(newMessage);
     rerender(state);
 }
 

@@ -45,15 +45,17 @@
 .messages .other {
     padding: 15px 1px 15px 10px;
     background-color: skyblue;
-    width: 300px;
-    border-radius: 20px;
-}
-.me {
-    background-color: orange;
-    padding: 15px 1px 15px 10px;
-    margin-left: 300px;
-    margin-top: -50px;
-    border-radius: 20px;
-    width: 300px;
+    width: 200px;
+    border-radius: 40px;
 }
 
+.answer{
+margin-left: 300px;
+margin-top: -600px;
+}
+
+.inputMessage {
+    margin-left: 50px;
+padding: 20px;
+
+}

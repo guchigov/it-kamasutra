@@ -6,8 +6,6 @@ const Mesage = (props) => {
         <div className={classes.mesage}>
             <div className={classes.oneMessage}>
                 <div className={classes.other}>{props.message}</div>
-                <div className={classes.me}>Me----{props.message}</div>
-
             </div>
         </div>
     );
