@@ -46,4 +46,14 @@ export let addPost = (postMessage) => {
     rerender(state);
 }
 
+export let sendMessage = (textMessage) => {
+    let newMessage = {
+        id: 7,
+        message: textMessage,
+    }
+    state.dialogsPage.messageState.push(newMessage);
+    rerender(state);
+}
+
+
 export default state;

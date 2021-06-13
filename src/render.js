@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 
-import {addPost} from "./redux/state";
+import {addPost, sendMessage} from "./redux/state";
 
 export let rerender = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state} addPost={addPost} />
+            <App state={state} addPost={addPost} sendMessage={sendMessage}/>
         </React.StrictMode>,
         document.getElementById('root')
     );

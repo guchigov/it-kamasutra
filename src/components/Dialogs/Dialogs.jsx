@@ -3,6 +3,7 @@ import classes from './Dialogs.module.css'
 import Mesage from "./Mesage/Mesage";
 import UserDialog from "./UserDialog/UserDialog";
 
+
 const Dialogs = (props) => {
 
     let mapDialog = props.state.dialogsState.map(dialog =>
@@ -13,7 +14,8 @@ const Dialogs = (props) => {
    let newMessage = React.createRef();
     let sendMessage = () => {
         let text = newMessage.current.value;
-        alert(text);
+        props.sendMessage(text);
+        newMessage.current.value = '';
     }
 
     return (
@@ -24,7 +26,7 @@ const Dialogs = (props) => {
             <div className={classes.messages}>
                 {mapMessages}
                 <div>
-                    <textarea ref={newMessage}></textarea>
+                    <textarea ref={newMessage}/>
                 </div>
                 <div>
                     <button onClick={sendMessage}>Send message</button>
