@@ -8,6 +8,7 @@ let state = {
             {id: 3, message: 'Check my Git', likescount: 0},
             {id: 4, message: 'Check my Greets', likescount: 0},
         ],
+        newPostText: ""
     },
     dialogsPage: {
 
@@ -40,14 +41,14 @@ let state = {
 
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 5,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likescount:0
     }
         state.profilePage.postsState.push(newPost);
-    rerender(state);
+        rerender(state);
 }
 
 export let sendMessage = (textMessage) => {
@@ -58,6 +59,9 @@ export let sendMessage = (textMessage) => {
     state.dialogsPage.answerState.push(newMessage);
     rerender(state);
 }
-
+export let updateNewPostText = (text) => {
+    state.profilePage.newPostText = text;
+    rerender(state);
+}
 
 export default state;
