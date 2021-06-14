@@ -1,21 +1,22 @@
 import React from "react";
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
+import {updateNewPostText} from "../../../redux/state";
 
 const MyPosts = (props) => {
 
     let mapPostsData =
         props.postsData.map(postMessage => <Post message={postMessage.message} likescount={postMessage.likescount}/>);
+
     let newPostElement = React.createRef();
 
     let addPost = () => {
         props.addPost();
-        newPostElement.current.value = "";
-        props.updateNewPostText('');
+
     }
     let postChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        updateNewPostText(text);
     }
     return (
         <div className={classes.mypost}>

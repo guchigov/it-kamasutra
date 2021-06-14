@@ -8,7 +8,7 @@ export let rerender = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <App state={state} updateMessage={updateMessage} addPost={addPost} sendMessage={sendMessage}
-                 updateNewPostText={updateNewPostText}/>
+                 updateNewPostText={updateNewPostText} />
         </React.StrictMode>,
         document.getElementById('root')
     );

@@ -11,6 +11,7 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 
 
+
 const App = (props) => {
 
     return (
@@ -22,12 +23,14 @@ const App = (props) => {
 
                 <div className='app-wrapper-content'>
                     <Route path='/dialogs'
-                           render={() => <Dialogs state={props.state.dialogsPage} updateMessage={props.updateMessage}
+                           render={() => <Dialogs state={props.state.dialogsPage}
+                                                  updateMessage={props.updateMessage}
                                                   sendMessage={props.sendMessage}/>}/>
                     <Route path='/profile'
                            render={() => <Profile state={props.state.profilePage}
                                                   addPost={props.addPost}
-                                                  updateNewPostText={props.updateNewPostText}/>}/>
+                                                  updateNewPostText={props.updateNewPostText}
+                                                  newPostText={props.state.profilePage.newPostText}  />}/>
                     <Route path='/music' component={Music}/>
                     <Route path='/news' component={News}/>
                     <Route path='/settings' component={Settings}/>

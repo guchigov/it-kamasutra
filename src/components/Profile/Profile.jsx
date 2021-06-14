@@ -4,6 +4,7 @@ import MyPosts from "./MyPosts/MyPosts";
 import Description from "./Description/Description";
 import Wallpaper from "./Wallpaper/Wallpaper";
 
+
 const Profile = (props) => {
 
     return (
@@ -13,8 +14,8 @@ const Profile = (props) => {
                 <Description/>
                 <MyPosts postsData={props.state.postsState}
                          addPost={props.addPost}
-                         newPostState={props.state.newPostText}
-                         updateNewPostText={props.updateNewPostText}/>
+                         newPostText={props.newPostText}
+                         updateNewPostText={props.updateNewPostText}   />
             </div>
 
 
