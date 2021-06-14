@@ -28,6 +28,7 @@ let state = {
             {id: 5, message: "Yo"},
             {id: 6, message: "Hello"},
         ],
+        messageForSend: "madagaskar",
         answerState: [
             {id: 1, message: "Hello, Dimich"},
             {id: 2, message: "I can write it on JS!"}
@@ -61,6 +62,11 @@ export let sendMessage = (textMessage) => {
 }
 export let updateNewPostText = (text) => {
     state.profilePage.newPostText = text;
+    rerender(state);
+}
+
+export let updateMessage = (text) => {
+    state.dialogsPage.messageForSend = text;
     rerender(state);
 }
 
