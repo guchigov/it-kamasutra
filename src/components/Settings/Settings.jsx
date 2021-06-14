@@ -2,19 +2,14 @@ import React from 'react';
 import classes from './Settings.module.css'
 
 
-const Settings = (props) =>{
+const Settings = (props) => {
     return (
-      <div>
+        <div>
 
-Settings
-
-
+            Settings
 
 
-
-
-
-      </div>
+        </div>
     );
 
 }

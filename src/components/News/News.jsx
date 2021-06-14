@@ -2,19 +2,14 @@ import React from 'react';
 import classes from './News.module.css'
 
 
-const News = (props) =>{
+const News = (props) => {
     return (
-      <div>
+        <div>
 
-News
-
-
+            News
 
 
-
-
-
-      </div>
+        </div>
     );
 
 }

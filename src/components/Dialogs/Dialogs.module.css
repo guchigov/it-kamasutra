@@ -15,11 +15,13 @@
 .user a.activeLink {
     color: blue;
 }
+
 .user {
     margin: 2px;
     padding: 1px 1px 30px;
     grid-area: oneUser;
 }
+
 .oneMessage {
     margin-top: 25px;
     padding: 1px 1px 30px;
@@ -49,13 +51,13 @@
     border-radius: 40px;
 }
 
-.answer{
-margin-left: 300px;
-margin-top: -600px;
+.answer {
+    margin-left: 300px;
+    margin-top: -600px;
 }
 
 .inputMessage {
     margin-left: 50px;
-padding: 20px;
+    padding: 20px;
 
 }

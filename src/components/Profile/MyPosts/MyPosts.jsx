@@ -26,7 +26,10 @@ const MyPosts = (props) => {
                 </div>
 
                 <div>
-                <button onClick={() => {addPost()} }> Add post </button>
+                    <button onClick={() => {
+                        addPost()
+                    }}> Add post
+                    </button>
 
                 </div>
             </div>

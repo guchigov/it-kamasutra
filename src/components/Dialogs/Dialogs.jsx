@@ -14,14 +14,13 @@ const Dialogs = (props) => {
         <Mesage message={textMessage.message}/>);
 
     let mapAnswerMessage = props.state.answerState.map(textMessage =>
-         <AnswerMessage message={textMessage.message}/>);
+        <AnswerMessage message={textMessage.message}/>);
 
 
     let newMessage = React.createRef();
+
     let sendMessage = () => {
-        let text = newMessage.current.value;
-        props.sendMessage(text);
-        newMessage.current.value = '';
+        props.sendMessage();
     }
     let messageChange = () => {
         let text = newMessage.current.value;
@@ -30,21 +29,23 @@ const Dialogs = (props) => {
 
     return (
         <div>
-        <div className={classes.dialogs}>
+            <div className={classes.dialogs}>
                 <div className={classes.usersDialogs}>
                     {mapDialog}
                 </div>
-                    <div className={classes.messages}>
-                        {mapMessages}
-                    </div>
-        </div>
+                <div className={classes.messages}>
+                    {mapMessages}
+                </div>
+            </div>
 
             <div className={classes.answer}>
                 {mapAnswerMessage}
                 <div className={classes.inputMessage}>
                     <textarea onChange={messageChange} value={props.state.messageForSend} ref={newMessage}/>
 
-                <div><button onClick={sendMessage}>Send message</button></div>
+                    <div>
+                        <button onClick={sendMessage}>Send message</button>
+                    </div>
                 </div>
             </div>
 

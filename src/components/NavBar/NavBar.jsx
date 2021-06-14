@@ -34,8 +34,6 @@ const NavBar = (props) => {
                 </div>
 
 
-
-
             </div>
             {mapFriend}
             <div className={classes.bestFriends}>

@@ -9,16 +9,15 @@ const Description = () => {
                      alt={"avatar"}/>
             </div>
             <div className={classes.about}>
-               <div className={classes.divDesc}>
-                  <span>Description</span >
-                  <div>age</div>
-                   <div>city</div>
-                   <div>education</div>
-                   <div>hobbies</div>
+                <div className={classes.divDesc}>
+                    <span>Description</span>
+                    <div>age</div>
+                    <div>city</div>
+                    <div>education</div>
+                    <div>hobbies</div>
 
 
-
-               </div>
+                </div>
             </div>
 
         </div>
