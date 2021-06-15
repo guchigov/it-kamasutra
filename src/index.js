@@ -1,11 +1,22 @@
 import reportWebVitals from './reportWebVitals';
-import state from "./redux/state";
-import {rerender} from './render'
+import state, {addPost, sendMessage, subscribe, updateMessage, updateNewPostText} from "./redux/state";
+import ReactDOM from "react-dom";
+import React from "react";
+import App from "./App";
 
+
+let rerender = (state) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App state={state} updateMessage={updateMessage} addPost={addPost} sendMessage={sendMessage}
+                 updateNewPostText={updateNewPostText}/>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+
+}
 rerender(state);
 
+subscribe(rerender);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -9,7 +9,7 @@ const UserDialog = (props) => {
         <div className={classes.user}>
 
             <NavLink activeClassName={classes.activeLink} to={way}>
-               <div className={classes.avatar}><img src={props.avatar} alt='avatar picture'/></div>
+               <div className={classes.avatar}><img src={props.avatar} alt='avatar'/></div>
                <div className={classes.name}>{props.name}</div>
             </NavLink>
 

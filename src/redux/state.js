@@ -1,5 +1,6 @@
-import {rerender} from "../render";
-
+let rerender = () => {
+    console.log("local function rerender in state.js");
+}
 let state = {
     profilePage: {
         postsState: [
@@ -70,7 +71,7 @@ let state = {
 
 }
 window.state = state;
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5,
         message: state.profilePage.newPostText,
@@ -81,12 +82,12 @@ export let addPost = () => {
         rerender(state);
 }
 
-export let updateNewPostText = (text) => {
+export const updateNewPostText = (text) => {
     state.profilePage.newPostText = text;
     rerender(state);
 }
 
-export let sendMessage = () => {
+export const sendMessage = () => {
     let newMessage = {
         id: 3,
         message: state.dialogsPage.messageForSend,
@@ -97,9 +98,14 @@ export let sendMessage = () => {
 }
 
 
-export let updateMessage = (text) => {
+export const updateMessage = (text) => {
     state.dialogsPage.messageForSend = text;
     rerender(state);
+}
+
+
+export const subscribe = (observer) => {
+    rerender = observer;
 }
 
 export default state;
