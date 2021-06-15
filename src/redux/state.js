@@ -1,6 +1,7 @@
 let rerender = () => {
     console.log("local function rerender in state.js");
 }
+
 let state = {
     profilePage: {
         postsState: [
@@ -71,6 +72,7 @@ let state = {
 
 }
 window.state = state;
+
 export const addPost = () => {
     let newPost = {
         id: 5,
@@ -79,7 +81,7 @@ export const addPost = () => {
     }
     state.profilePage.postsState.push(newPost);
     state.profilePage.newPostText = '';
-        rerender(state);
+    rerender(state);
 }
 
 export const updateNewPostText = (text) => {
