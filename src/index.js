@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import state, {addPost, sendMessage, subscribe, updateMessage, updateNewPostText} from "./redux/state";
+import store from "./redux/state";
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
@@ -8,15 +8,15 @@ import App from "./App";
 let rerender = (state) => {
     ReactDOM.render(
         <React.StrictMode>
-            <App state={state} updateMessage={updateMessage} addPost={addPost} sendMessage={sendMessage}
-                 updateNewPostText={updateNewPostText}/>
+            <App state={store.getState()} updateMessage={store.updateMessage.bind(store)} addPost={store.addPost.bind(store)} sendMessage={store.sendMessage.bind(store)}
+                 updateNewPostText={store.updateNewPostText.bind(store)}/>
         </React.StrictMode>,
         document.getElementById('root')
     );
 
 }
-rerender(state);
+rerender(store.getState());
 
-subscribe(rerender);
+store.subscribe(rerender);
 
 reportWebVitals();
