@@ -80,42 +80,70 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-    getState(){
-      return this._state;
+    getState() {
+        return this._state;
     },
 
-    dispatch(action) {
-        if(action.type === "ADD-POST"){
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likescount: 0
-            }
-            this._state.profilePage.postsState.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber(this._state);
+    // dispatch(action) {
+    //     if (action.type === "ADD-POST") {
+    //         let newPost = {
+    //             id: 5,
+    //             message: this._state.profilePage.newPostText,
+    //             likescount: 0
+    //         }
+    //         this._state.profilePage.postsState.push(newPost);
+    //         this._state.profilePage.newPostText = '';
+    //         this._callSubscriber(this._state);
+    //     } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+    //         this._state.profilePage.newPostText = action.text;
+    //         this._callSubscriber(this._state);
+    //     } else if (action.type === "SEND-MESSAGE") {
+    //         let newMessage = {
+    //             id: 3,
+    //             message: this._state.dialogsPage.messageForSend,
+    //         }
+    //         this._state.dialogsPage.answerState.push(newMessage);
+    //         this._state.dialogsPage.messageForSend = '';
+    //         this._callSubscriber(this._state);
+    //     } else if (action.type === "UPDATE-MESSAGE") {
+    //         this._state.dialogsPage.messageForSend = action.text;
+    //         this._callSubscriber(this._state);
+    //     }
+    //
+    // },
+    dispatch(action){
+        switch (action.type) {
+            case("ADD-POST"):
+                let newPost = {
+                    id: 5,
+                    message: this._state.profilePage.newPostText,
+                    likescount: 0
+                }
+                this._state.profilePage.postsState.push(newPost);
+                this._state.profilePage.newPostText = '';
+                this._callSubscriber(this._state);
+                break;
+            case("UPDATE-NEW-POST-TEXT"):
+                this._state.profilePage.newPostText = action.text;
+                this._callSubscriber(this._state);
+                break;
+            case("SEND-MESSAGE"):
+                let newMessage = {
+                    id: 3,
+                    message: this._state.dialogsPage.messageForSend,
+                }
+                this._state.dialogsPage.answerState.push(newMessage);
+                this._state.dialogsPage.messageForSend = '';
+                this._callSubscriber(this._state);
+                break;
+            case("UPDATE-MESSAGE"):
+                this._state.dialogsPage.messageForSend = action.text;
+                this._callSubscriber(this._state);
+                break;
+            default:
+                console.log("Switch method of dispatch")
         }
-        else if(action.type === "UPDATE-NEW-POST-TEXT") {
-            this._state.profilePage.newPostText = action.text;
-            this._callSubscriber(this._state);
-        }
-
-    },
-
-    sendMessage() {
-        let newMessage = {
-            id: 3,
-            message: this._state.dialogsPage.messageForSend,
-        }
-        this._state.dialogsPage.answerState.push(newMessage);
-        this._state.dialogsPage.messageForSend = '';
-        this._callSubscriber(this._state);
-    },
-    updateMessage(text) {
-        this._state.dialogsPage.messageForSend = text;
-        this._callSubscriber(this._state);
-    },
-
+    }
 
 }
 window.store = store;
