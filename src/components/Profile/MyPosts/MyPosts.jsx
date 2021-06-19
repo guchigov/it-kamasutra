@@ -6,24 +6,27 @@ import Post from "./Post/Post";
 const MyPosts = (props) => {
 
     let mapPostsData =
-        props.postsData.map(postMessage => <Post message={postMessage.message} likescount={postMessage.likescount}/>);
+        props.stateProfilePage.postsState.map(postMessage => <Post message={postMessage.message} likescount={postMessage.likescount}/>);
 
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        let action = {type:"ADD-POST"};
+        props.dispatch(action);
 
     }
     let postChange = () => {
         let text = newPostElement.current.value;
-        props.updateNewPostText(text);
+        let action = {type: "UPDATE-NEW-POST-TEXT", text: text};
+        props.dispatch(action);
+
     }
     return (
         <div className={classes.mypost}>
             <div>
                 <div><h3>My posts</h3></div>
                 <div>
-                    <textarea onChange={postChange} ref={newPostElement} value={props.newPostText}/>
+                    <textarea onChange={postChange} ref={newPostElement} value={props.stateProfilePage.newPostText}/>
                 </div>
 
                 <div>

@@ -1,9 +1,8 @@
 let store = {
 
-    rerender() {
+    _callSubscriber() {
         console.log("local function rerender in state.js");
     },
-
     _state: {
         profilePage: {
             postsState: [
@@ -77,24 +76,30 @@ let store = {
         ]
 
     },
+
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
     getState(){
       return this._state;
     },
 
-    addPost() {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likescount: 0
+    dispatch(action) {
+        if(action.type === "ADD-POST"){
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likescount: 0
+            }
+            this._state.profilePage.postsState.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber(this._state);
         }
-        this._state.profilePage.postsState.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this.rerender(this._state);
-    },
+        else if(action.type === "UPDATE-NEW-POST-TEXT") {
+            this._state.profilePage.newPostText = action.text;
+            this._callSubscriber(this._state);
+        }
 
-    updateNewPostText(text) {
-        this._state.profilePage.newPostText = text;
-        this.rerender(this._state);
     },
 
     sendMessage() {
@@ -104,18 +109,14 @@ let store = {
         }
         this._state.dialogsPage.answerState.push(newMessage);
         this._state.dialogsPage.messageForSend = '';
-        this.rerender(this._state);
+        this._callSubscriber(this._state);
     },
-
-
     updateMessage(text) {
         this._state.dialogsPage.messageForSend = text;
-        this.rerender(this._state);
+        this._callSubscriber(this._state);
     },
 
-    subscribe(observer) {
-        this.rerender = observer;
-    },
+
 }
 window.store = store;
 
