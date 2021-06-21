@@ -1,5 +1,7 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const  SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
 
 let store = {
 
@@ -139,7 +141,7 @@ let store = {
                 this._state.dialogsPage.messageForSend = '';
                 this._callSubscriber(this._state);
                 break;
-            case("UPDATE-MESSAGE"):
+            case("UPDATE-MESSAGE-TEXT"):
                 this._state.dialogsPage.messageForSend = action.text;
                 this._callSubscriber(this._state);
                 break;
@@ -152,6 +154,8 @@ let store = {
 
 export const addPostActionCreator = () =>  ({type: ADD_POST});
 export const updateNewPostText = (text) =>({type: UPDATE_NEW_POST_TEXT,text: text });
+export const sendMessage = () =>  ({type: SEND_MESSAGE});
+export const  updateMessageText = (text) =>({type:UPDATE_MESSAGE_TEXT,text: text });
 window.store = store;
 
 export default store;

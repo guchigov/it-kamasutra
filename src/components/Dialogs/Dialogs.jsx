@@ -3,6 +3,8 @@ import classes from './Dialogs.module.css'
 import Mesage from "./Mesage/Mesage";
 import UserDialog from "./UserDialog/UserDialog";
 import AnswerMessage from "./AnswerMessage/AnswerMessage";
+import {sendMessage, updateMessageText,} from "../../redux/state";
+
 
 
 const Dialogs = (props) => {
@@ -17,16 +19,14 @@ const Dialogs = (props) => {
         <AnswerMessage message={textMessage.message}/>);
 
 
-    let newMessage = React.createRef();
 
-    let sendMessage = () => {
-        let action = {type:"SEND-MESSAGE"};
-        props.dispatch(action);
+
+    let send = () => {
+        props.dispatch(sendMessage());
     }
-    let messageChange = () => {
-        let text = newMessage.current.value;
-        let action = {type:"UPDATE-MESSAGE", text: text};
-        props.dispatch(action);
+    let messageChange = (e) => {
+        let text = e.target.value;
+        props.dispatch(updateMessageText(text));
     }
 
     return (
@@ -43,10 +43,10 @@ const Dialogs = (props) => {
             <div className={classes.answer}>
                 {mapAnswerMessage}
                 <div className={classes.inputMessage}>
-                    <textarea onChange={messageChange} value={props.state.messageForSend} ref={newMessage}/>
+                    <textarea placeholder={'Enter your message'} onChange={messageChange} value={props.state.messageForSend} />
 
                     <div>
-                        <button onClick={sendMessage}>Send message</button>
+                        <button onClick={send}>Send message</button>
                     </div>
                 </div>
             </div>
