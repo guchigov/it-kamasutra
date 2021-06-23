@@ -5,9 +5,6 @@ import navBarReducer from "./navBarReducer";
 
 let store = {
 
-    _callSubscriber() {
-        console.log("local function _callSubscriber in state.js");
-    },
 
     _state: {
         profilePage: {
