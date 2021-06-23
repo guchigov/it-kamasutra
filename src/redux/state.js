@@ -79,6 +79,15 @@ let store = {
         ]
     },
 
+    _callSubscriber(){
+        console.log("local _callSubscriber");
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
+    getState() {
+        return this._state;
+    },
 
     dispatch(action){
        this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action);
@@ -87,14 +96,6 @@ let store = {
        this._callSubscriber(this._state);
     },
 
-
-    subscribe(observer) {
-        this._callSubscriber = observer;
-    },
-
-    getState() {
-        return this._state;
-    },
 
 }
 
