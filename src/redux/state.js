@@ -1,13 +1,14 @@
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const  SEND_MESSAGE = 'SEND-MESSAGE';
-const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
+import dialogsPageReducer from "./dialogsPageReducer";
+import profilePageReducer from "./profilePageReducer";
+import navBarReducer from "./navBarReducer";
+
 
 let store = {
 
     _callSubscriber() {
-        console.log("local function rerender in state.js");
+        console.log("local function _callSubscriber in state.js");
     },
+
     _state: {
         profilePage: {
             postsState: [
@@ -79,83 +80,26 @@ let store = {
                 avatar: 'https://i.ytimg.com/an/TW0FUhT0m-Bqg2trTbSs0g/featured_channel.jpg?v=5fc22bf3'
             }
         ]
-
     },
+
+
+    dispatch(action){
+       this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action);
+       this._state.profilePage = profilePageReducer(this._state.profilePage, action);
+       this._state.navBar = navBarReducer(this._state.navBar, action);
+       this._callSubscriber(this._state);
+    },
+
 
     subscribe(observer) {
         this._callSubscriber = observer;
     },
+
     getState() {
         return this._state;
     },
 
-    // dispatch(action) {
-    //     if (action.type === "ADD-POST") {
-    //         let newPost = {
-    //             id: 5,
-    //             message: this._state.profilePage.newPostText,
-    //             likescount: 0
-    //         }
-    //         this._state.profilePage.postsState.push(newPost);
-    //         this._state.profilePage.newPostText = '';
-    //         this._callSubscriber(this._state);
-    //     } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-    //         this._state.profilePage.newPostText = action.text;
-    //         this._callSubscriber(this._state);
-    //     } else if (action.type === "SEND-MESSAGE") {
-    //         let newMessage = {
-    //             id: 3,
-    //             message: this._state.dialogsPage.messageForSend,
-    //         }
-    //         this._state.dialogsPage.answerState.push(newMessage);
-    //         this._state.dialogsPage.messageForSend = '';
-    //         this._callSubscriber(this._state);
-    //     } else if (action.type === "UPDATE-MESSAGE") {
-    //         this._state.dialogsPage.messageForSend = action.text;
-    //         this._callSubscriber(this._state);
-    //     }
-    //
-    // },
-    dispatch(action){
-        switch (action.type) {
-            case("ADD-POST"):
-                let newPost = {
-                    id: 5,
-                    message: this._state.profilePage.newPostText,
-                    likescount: 0
-                }
-                this._state.profilePage.postsState.push(newPost);
-                this._state.profilePage.newPostText = '';
-                this._callSubscriber(this._state);
-                break;
-            case("UPDATE-NEW-POST-TEXT"):
-                this._state.profilePage.newPostText = action.text;
-                this._callSubscriber(this._state);
-                break;
-            case("SEND-MESSAGE"):
-                let newMessage = {
-                    id: 3,
-                    message: this._state.dialogsPage.messageForSend,
-                }
-                this._state.dialogsPage.answerState.push(newMessage);
-                this._state.dialogsPage.messageForSend = '';
-                this._callSubscriber(this._state);
-                break;
-            case("UPDATE-MESSAGE-TEXT"):
-                this._state.dialogsPage.messageForSend = action.text;
-                this._callSubscriber(this._state);
-                break;
-            default:
-                console.log("Switch method of dispatch")
-        }
-    }
-
 }
 
-export const addPostActionCreator = () =>  ({type: ADD_POST});
-export const updateNewPostText = (text) =>({type: UPDATE_NEW_POST_TEXT,text: text });
-export const sendMessage = () =>  ({type: SEND_MESSAGE});
-export const  updateMessageText = (text) =>({type:UPDATE_MESSAGE_TEXT,text: text });
 window.store = store;
-
 export default store;

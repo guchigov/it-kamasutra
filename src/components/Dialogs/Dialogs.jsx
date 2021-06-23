@@ -3,7 +3,7 @@ import classes from './Dialogs.module.css'
 import Mesage from "./Mesage/Mesage";
 import UserDialog from "./UserDialog/UserDialog";
 import AnswerMessage from "./AnswerMessage/AnswerMessage";
-import {sendMessage, updateMessageText,} from "../../redux/state";
+import {sendMessage, updateMessageText,} from "../../redux/dialogsPageReducer";
 
 
 
