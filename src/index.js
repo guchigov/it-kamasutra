@@ -1,5 +1,5 @@
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/state";
+import store from "./redux/redux-store";
 import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
@@ -7,6 +7,7 @@ import {BrowserRouter} from "react-router-dom";
 
 
 let rerender = (state) => {
+    debugger;
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
@@ -19,6 +20,10 @@ let rerender = (state) => {
 }
 rerender(store.getState());
 
-store.subscribe(rerender);
+store.subscribe( () => {
+    let state = store.getState();
+        rerender(state);
+}
+    );
 
 reportWebVitals();
