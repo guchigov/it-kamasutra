@@ -7,11 +7,11 @@ import {BrowserRouter} from "react-router-dom";
 
 
 let rerender = (state) => {
-    debugger;
+
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-            <App state={state} dispatch={store.dispatch.bind(store)}/>
+            <App state={state} dispatch={store.dispatch.bind(store)} store={store}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')

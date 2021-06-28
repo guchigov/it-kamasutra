@@ -1,8 +1,8 @@
 import React from "react";
 import classes from './Profile.module.css';
-import MyPosts from "./MyPosts/MyPosts";
 import Description from "./Description/Description";
 import Wallpaper from "./Wallpaper/Wallpaper";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 const Profile = (props) => {
@@ -12,8 +12,7 @@ const Profile = (props) => {
             <Wallpaper/>
             <div className={classes.afterWall}>
                 <Description/>
-                <MyPosts stateProfilePage={props.stateProfilePage}
-                         dispatch={props.dispatch}   />
+                <MyPostsContainer store={props.store}  />
             </div>
 
 

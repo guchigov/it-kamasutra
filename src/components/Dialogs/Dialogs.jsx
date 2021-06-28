@@ -3,30 +3,29 @@ import classes from './Dialogs.module.css'
 import Mesage from "./Mesage/Mesage";
 import UserDialog from "./UserDialog/UserDialog";
 import AnswerMessage from "./AnswerMessage/AnswerMessage";
-import {sendMessage, updateMessageText,} from "../../redux/dialogsPageReducer";
 
 
 
 const Dialogs = (props) => {
 
-    let mapDialog = props.state.dialogsState.map(dialog =>
+    let mapDialog = props.dialogsPage.dialogsState.map(dialog =>
         <UserDialog name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
 
-    let mapMessages = props.state.messageState.map(textMessage =>
+    let mapMessages = props.dialogsPage.messageState.map(textMessage =>
         <Mesage message={textMessage.message}/>);
 
-    let mapAnswerMessage = props.state.answerState.map(textMessage =>
+    let mapAnswerMessage = props.dialogsPage.answerState.map(textMessage =>
         <AnswerMessage message={textMessage.message}/>);
 
 
 
 
-    let send = () => {
-        props.dispatch(sendMessage());
+    let onSend = () => {
+        props.sendMessage();
     }
-    let messageChange = (e) => {
+    let onMessageChange = (e) => {
         let text = e.target.value;
-        props.dispatch(updateMessageText(text));
+        props.updateMessageText(text);
     }
 
     return (
@@ -43,10 +42,10 @@ const Dialogs = (props) => {
             <div className={classes.answer}>
                 {mapAnswerMessage}
                 <div className={classes.inputMessage}>
-                    <textarea placeholder={'Enter your message'} onChange={messageChange} value={props.state.messageForSend} />
+                    <textarea placeholder={'Enter your message'} onChange={onMessageChange} value={props.dialogsPage.messageForSend} />
 
                     <div>
-                        <button onClick={send}>Send message</button>
+                        <button onClick={onSend}>Send message</button>
                     </div>
                 </div>
             </div>
