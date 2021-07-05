@@ -4,16 +4,16 @@ import ReactDOM from "react-dom";
 import React from "react";
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
-import storeContext from "./storeContext";
+import {Provider} from "react-redux";
 
 let rerender = (state) => {
 
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <storeContext.Provider value={store}>
+                <Provider store={store}>
                      <App/>
-                </storeContext.Provider>
+                </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
