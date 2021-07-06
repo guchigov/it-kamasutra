@@ -22,7 +22,7 @@ const profilePageReducer = (state = initialState, action) => {
             }
             let stateCopy = {...state};
             stateCopy.postsState = [...state.postsState];
-            stateCopy.postsState.push(newPost);
+            stateCopy.postsState.unshift(newPost);
             stateCopy.newPostText = '';
             return stateCopy;
     }
