@@ -6,9 +6,7 @@ import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
-let rerender = (state) => {
-
-    ReactDOM.render(
+ ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
                 <Provider store={store}>
@@ -19,13 +17,5 @@ let rerender = (state) => {
         document.getElementById('root')
     );
 
-}
-rerender(store.getState());
-
-store.subscribe( () => {
-    let state = store.getState();
-        rerender(state);
-}
-    );
 
 reportWebVitals();
