@@ -5,7 +5,7 @@ import UserDialog from "../Dialogs/UserDialog/UserDialog";
 
 const NavBar = (props) => {
     let mapFriend = props.state.map(friend =>
-        <UserDialog name={friend.name} id={friend.id} avatar={friend.avatar}/>);
+        <UserDialog name={friend.name} key={friend.id} id={friend.id} avatar={friend.avatar}/>);
     return (
 
 

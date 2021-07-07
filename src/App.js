@@ -12,7 +12,6 @@ import NavBarContainer from "./components/NavBar/NavBarContainer";
 
 
 const App = (props) => {
-    debugger;
     return (
 
         <div className='app-wrapper'>

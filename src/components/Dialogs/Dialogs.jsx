@@ -9,13 +9,13 @@ import AnswerMessage from "./AnswerMessage/AnswerMessage";
 const Dialogs = (props) => {
 
     let mapDialog = props.dialogsPage.dialogsState.map(dialog =>
-        <UserDialog name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>);
+        <UserDialog name={dialog.name} key={dialog.id} id={dialog.id} avatar={dialog.avatar}/>);
 
     let mapMessages = props.dialogsPage.messageState.map(textMessage =>
-        <Mesage message={textMessage.message}/>);
+        <Mesage message={textMessage.message} key={textMessage.id} />);
 
-    let mapAnswerMessage = props.dialogsPage.answerState.map(textMessage =>
-        <AnswerMessage message={textMessage.message}/>);
+    let mapAnswerMessage = props.dialogsPage.answerState.map(textMessageA =>
+        <AnswerMessage message={textMessageA.message} key={textMessageA.id} />);
 
 
 
