@@ -28,6 +28,12 @@ const NavBar = (props) => {
                     Settings</NavLink>
                 </div>
 
+                <div  className={classes.users}>
+                    <NavLink to='/users' activeClassName={classes.activeLink}>
+                        Users
+                    </NavLink>
+                </div>
+
                 <div className={`${classes.item} ${classes.friends}`}>
                     FRIENDS
 
@@ -36,9 +42,8 @@ const NavBar = (props) => {
 
             </div>
             {mapFriend}
-            <div className={classes.bestFriends}>
-                {/*<span> {mapFriend}</span>*/}
-            </div>
+
+
         </nav>
     );
 }
