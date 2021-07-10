@@ -1,47 +1,14 @@
 import React from "react";
 import classes from './Users.module.css'
+import * as axios from "axios";
+import UserPhoto from "../../assets/images/user.png"
+
 const Users = (props) => {
     if(props.users.length === 0){
-        props.setUsers([
+        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response=>{
+             props.setUsers(response.data.items)
+        })
 
-                {
-                    id: 1,
-                    avatarURL: 'https://www.shareicon.net/data/256x256/2016/07/26/802043_man_512x512.png',
-                    follow: true,
-                    fullName: 'Dmitrii D.',
-                    status: 'I am a boss',
-                    location: {country: 'Russia', city: 'Moscow'}
-                },
-                {
-                    id: 2,
-                    avatarURL: 'https://www.shareicon.net/data/256x256/2016/07/26/802043_man_512x512.png',
-                    follow: false,
-                    fullName: 'Sergei',
-                    status: 'do stuff',
-                    location: {country: 'Kazakhstan', city: 'Almaty'}
-                },
-                {
-                    id: 3,
-                    avatarURL: 'https://www.shareicon.net/data/256x256/2016/07/26/802043_man_512x512.png',
-                    follow: true,
-                    fullName: 'Andrew',
-                    status: 'go to csgo',
-                    location: {country: 'Russia', city: 'Big Town'}
-                },
-                {
-                    id: 4,
-                    avatarURL: 'https://www.shareicon.net/data/256x256/2016/07/26/802043_man_512x512.png',
-                    follow: false,
-                    fullName: 'Tim',
-                    status: 'hungry',
-                    location: {country: 'USA', city: 'Colorado'}
-                }
-
-
-
-
-            ]
-        )
     }
 
 
@@ -50,7 +17,7 @@ const Users = (props) => {
             {
                 props.users.map(u=><div key={u}>
                     <span>
-                        <div><img src={u.avatarURL} className={classes.avatarURL} alt=""/></div>
+                        <div><img src={u.photos.small != null ? u.photos.small : UserPhoto  } className={classes.avatarURL} alt=""/></div>
                         <div>
                             {
                                 u.follow ? <button onClick={()=>{props.unfollow(u.id)}}>Follow</button> : <button onClick={()=>{props.onFollow(u.id)}}>Unfollow</button>
@@ -62,7 +29,7 @@ const Users = (props) => {
                     <span>
                         <span>
                             <div>
-                                {u.fullName}
+                                {u.name}
                             </div>
                             <div>
                                 {u.status}
@@ -70,8 +37,8 @@ const Users = (props) => {
                         </span>
                     <span>
                         <div>
-                            <div>{u.location.country}</div>
-                            <div>{u.location.city}</div>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.city"}</div>
                         </div>
                     </span>
                     </span>
